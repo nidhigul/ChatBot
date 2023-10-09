@@ -48,16 +48,15 @@ public class Chat {
 					String url = "jdbc:mysql://localhost:3306/chatbot";
 					String username = "root";
 					String password = "blueheart";
-					String query = "Select * from chats";
+					String query = "Select * from chats where question = ?";
 					Class.forName("com.mysql.jdbc.Driver"); 
 					Connection con=DriverManager.getConnection(  
 							url,username,password); 
 					java.sql.Statement st = con.createStatement();
 					ResultSet  rs = st.executeQuery(query);
 					while(rs.next()) {
-						String ques = rs.getString("question");
 						String ans = rs.getString("answer");
-						disp.setText("User -> "+ques + "\n"+"Blue - > "+ans);
+						disp.setText("User -> "+question + "\n"+"Blue - > "+ans);
 					}
 					st.close();
 					con.close();
