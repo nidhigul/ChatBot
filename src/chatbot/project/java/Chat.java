@@ -33,6 +33,7 @@ public class Chat {
 		disp.setBorder(BorderFactory.createCompoundBorder(border,
 	            BorderFactory.createEmptyBorder(10, 10, 10, 10)));
 		disp.setEditable(false);
+		disp.setFont(new Font("Monospaced",Font.PLAIN,15));
 		b.setBounds(1200,580,150,58);
 		f1.add(b); 
 		panel.add(disp);
@@ -58,16 +59,13 @@ public class Chat {
 		           ResultSet rs = st.executeQuery(Sql);
 		            
 					while(rs.next()) {
-						String question = ta.getText();
+		        	   String questions = ta.getText();
+		        	   ta.setText("");
 		                    String ques = rs.getString("question");
-		                    if(ques.trim().equalsIgnoreCase(question.trim()))
+		                    if(ques.trim().equalsIgnoreCase(questions.trim()))
 		                    {
 		                    	String ans = rs.getString("answer");
-								disp.setText("User -> "+question + "\n");
-								disp.setText("\n"+"Blue -> "+ans);
-		                    }
-		                    else {
-		                    	disp.setText("Blue - > Sorry, i don't know answer to this question");
+								disp.append("User -> "+questions + "\n"+"Blue -> "+ans+"\n");
 		                    }
 					}
 					st.close();
