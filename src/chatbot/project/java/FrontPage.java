@@ -5,18 +5,18 @@ import java.awt.event.*;
 
 public class FrontPage {
 	public static void main(String[] args) {
-		final JFrame f= new JFrame("WELCOME"); 
-		f.setExtendedState(f.MAXIMIZED_BOTH);
-		JButton b=new JButton(new ImageIcon("C:\\Users\\rama bebs\\Downloads\\Java Module\\bot.jpg"));
-		b.setBounds(400,100,500, 500); 
-		b.addActionListener(new ActionListener() {
+		final JFrame frame= new JFrame("WELCOME"); 
+		frame.setExtendedState(frame.MAXIMIZED_BOTH);
+		JButton button=new JButton(new ImageIcon("C:\\Users\\rama bebs\\Downloads\\Java Module\\bot2.jpg"));
+		button.setBounds(400,100,500, 500); 
+		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent ae) {
-				f.dispose();
+				frame.dispose();
 				new Chat();
 			}
 		});
-		f.add(b);       
-		f.setVisible(true); 
-		f.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+		frame.add(button);       
+		frame.setVisible(true); 
+		frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 }
 }
