@@ -31,7 +31,9 @@ public class Chat {
 		JScrollPane scrollPane = new JScrollPane(display);
 		scrollPane.setBackground(Color.gray);
 		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
-		display.append("Welcome, my name is blue and i will be your friend. let's get to know each other. \n");
+		display.append("Welcome, my name is blue and i will be your friend. let's get to know each other. \n\n"
+				+ "Here are some example questions that you can me. \n\n1 - What is life \n2- What is a telescope \n3 - Who was the first prime minister of India"
+				+ "\n4 - Which is the oldest mountain range in India \n5 - Which state has the largest area \n\n");
 		button.setBounds(600,640,150,58);
 		frame.add(button); 
 		panel.add(scrollPane);
